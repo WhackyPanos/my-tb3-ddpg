@@ -5,7 +5,7 @@ Dept. of PEM, Technical University of Crete. Thesis by Panos Skoulaxinos (in Gre
 
 Implemented in Python with TensorFlow/Keras and runs as a ROS node on TB3.
 
-## Instructions
+## Some info
 
 ### Intro
 The system is set up to run on ROS for the Turtlebot 3 Burger robotic platform. The agent is first trained on a simulation environment using Gazebo. It learns to navigate in environments with obstacles, where after a good training it learns to go around them, avoiding collisions. The system was tested in both known and unknown environments with different levels of complexity, where it proved that it is capable of fuctioning properly, navigating the robot to its goal without colliding. 
@@ -25,6 +25,7 @@ Characteristic of the DDPG algorithm is this copy of the "regular" NNs. They are
 #### Structure
 ![NN structure](/networks.png?raw=true "NN structure")
 
+## Instructions 
 ### Training
 By editing `rl.py` one can set up the training hyperparameters. By running this script, `actor.h5` and `critic.h5` (included) will be imported as weights for the NNs and starts the training process in the current environment. By editing the `goals` variable one can setup predetermined goals that the robot will attempt to navigate to sequentially. It will advance to the next goal when it successfully reaches the previous one. When the training process ends, ie. the set number of training episodes is reached, statistics are printed, a plot with the average episodic reward per episode is exported as well as a log with the MDP, for diagnostic purposes.
 
