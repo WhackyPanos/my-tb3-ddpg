@@ -22,6 +22,9 @@ The critic NN takes as an input both the state and the action and evaluates them
 #### Target pair of NNs
 Characteristic of the DDPG algorithm is this copy of the "regular" NNs. They are a "lagged" version of the regular NN pair, where their weights are updated less frequently. This helps in stability during the training process, as it prevents the agent from developing unwanted behaviours. 
 
+#### Structure
+![NN structure](/networks.png?raw=true "NN structure")
+
 ### Training
 By editing `rl.py` one can set up the training hyperparameters. By running this script, `actor.h5` and `critic.h5` (included) will be imported as weights for the NNs and starts the training process in the current environment. By editing the `goals` variable one can setup predetermined goals that the robot will attempt to navigate to sequentially. It will advance to the next goal when it successfully reaches the previous one. When the training process ends, ie. the set number of training episodes is reached, statistics are printed, a plot with the average episodic reward per episode is exported as well as a log with the MDP, for diagnostic purposes.
 
